@@ -1,6 +1,7 @@
 import os
 import shutil
 from copystatic import copy_files_recursive
+from gencontent import generate_pages_recursive
 
 
 def main():
@@ -10,6 +11,7 @@ def main():
         shutil.rmtree(path_public)
     copy_files_recursive(path_static, path_public)
 
+    generate_pages_recursive("./content", "template.html", "./public")
 
 if __name__ == "__main__":
     main()
